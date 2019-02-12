@@ -1,7 +1,7 @@
 .container {
   margin: 0 auto;
   padding: 0 20px;
-  max-width: 980px;
+  max-width: 1040px;
 }
 
 #layout {
@@ -17,6 +17,10 @@
 
 #layout-footer {
   flex-shrink: 0;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 header {
@@ -90,34 +94,63 @@ footer > h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: -5px;
+  margin: -7px;
+  padding-bottom: 10px;
 }
 
 .printer {
   box-sizing: border-box;
-  // border: 1px solid gray;
-  margin: 5px;
-  padding: 15px;
+  margin: 7px;
   flex: 1;
   min-width: 300px;
+  max-width: 510px;
+  // height: 360px;
   transition-duration: 100ms;
   transition-timing-function: ease-out;
-  border: 1px solid darkcyan;
-  // color: white;
-  // box-shadow: 2px 2px 2px #666;
+  box-shadow: 1px 1px 6px rgb(182, 182, 182);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  img {
-    // max-width: 300px;
-    max-width: 280px;
-    max-height: 100%;
-    width: 100%;
-    height: auto;
+  .printer-text {
+    padding: 0px 15px;
+
+    p {
+      font-weight: 100;
+      font-size: 1.1rem;
+    }
+
+    h4 {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .printer-headline {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .printer-hr {
+    margin: -10px 0 0 0;
+    opacity: 0.5;
+  }
+
+  .printer-image {
+    text-align: right;
+  }
+
+  .printer-image > img {
+    width: 250px;
+    padding: 0;
+    margin: -40px 0 -4px 0;
   }
 }
 
 .printer:hover {
   // transform: translateY(-2px);
-  background: darkcyan;
+  background: rgba(0, 139, 139, 0.9);
   color: white;
 }
 
@@ -128,10 +161,14 @@ button {
   box-sizing: border-box;
 }
 
+.tag-cloud {
+  margin: 0 0 10px 0;
+}
+
 .tag {
   display: inline-block;
-  margin: 0 7px 20px 0;
-  padding: 7px 12px;
+  margin: 0 10px 10px 0;
+  padding: 10px 12px;
   background: #eee;
   color: #999;
   cursor: pointer;
