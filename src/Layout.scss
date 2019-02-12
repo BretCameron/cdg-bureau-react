@@ -132,13 +132,33 @@ button {
   display: inline-block;
   margin: 0 7px 20px 0;
   padding: 7px 12px;
-  background: #444;
-  color: white;
+  background: #eee;
+  color: #999;
   cursor: pointer;
   transition-duration: 100ms;
   transition-timing-function: ease-out;
+  border-radius: 10px;
+}
+
+.tag-select {
+  background: #333;
+  color: #eee;
 }
 
 .tag:hover {
-  background: #777;
+  background: #333;
+}
+
+// Definition
+
+#definition {
+  display: inline-block;
+  font-style: italic;
+}
+
+// Logo
+
+#logo {
+  max-width: 120px;
+  padding: 14px 0;
 }

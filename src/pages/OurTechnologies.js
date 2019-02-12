@@ -1,39 +1,61 @@
 import React, { Component } from 'react';
 import Printer from '../components/Printer';
-import printers from '../data/printers';
 import TagCloud from '../components/TagCloud';
+import printers from '../data/printers';
+import techKey from '../data/tech-key';
 
 // Define technologies as an array
 const technologiesArray = [...new Set(Object.values(printers).map((el, index) => el.technology))];
 
 // Define initial state (every technology is 'off')
-const initialState = {};
-technologiesArray.forEach((el) => initialState[el] = false);
+const initialState = { tech: {}, definition: "" };
+
+technologiesArray.forEach((el) => initialState.tech[el] = false);
 
 export default class OurTechnologies extends Component {
     constructor(props) {
         super(props);
         this.state = initialState;
         this.handleClick = this.handleClick.bind(this);
+        this.handleMouseEnter = this.handleMouseEnter.bind(this);
+        this.handleMouseLeave = this.handleMouseLeave.bind(this);
         this.populatePage = this.populatePage.bind(this);
         this.filterContent = this.filterContent.bind(this);
     }
 
     handleClick(e) {
-        const newState = {}, key = e.target.id;
-        newState[key] = !this.state[key];
+        const key = e.target.id;
+
+        const newState = this.state;
+
+        newState.tech[key] = !this.state.tech[key];
+
         this.setState(newState);
+
+        if (!e.target.classList.contains('tag-select')) {
+            e.target.classList.add('tag-select');
+        } else {
+            e.target.classList.remove('tag-select');
+        }
+    }
+
+    handleMouseEnter(e) {
+        this.setState({ definition: techKey[e.target.id] })
+    }
+
+    handleMouseLeave(e) {
+        this.setState({ definition: "" })
     }
 
     filterContent(array) {
         //Work out what technologies are "true"
         //Create RegExp based on the true ones
 
-        const trueStates = Object.keys(this.state).filter(el => this.state[el]);
+        const trueStates = Object.keys(this.state.tech).filter(el => this.state.tech[el]);
 
         const filterExp = new RegExp(trueStates.join("|"));//new RegExp();
 
-        console.log(filterExp);
+        console.log(trueStates);
 
         const filteredArray = Object.values(array).filter((el, i) => el["technology"].match(filterExp));
         // console.log(filteredArray);
@@ -51,7 +73,7 @@ export default class OurTechnologies extends Component {
             <div>
                 <h2>Our Technologies</h2>
                 <p>The 3D printing equipment we have available to us includes:</p>
-                <TagCloud array={technologiesArray} handleClick={this.handleClick} />
+                <TagCloud array={technologiesArray} handleClick={this.handleClick} handleMouseEnter={this.handleMouseEnter} handleMouseLeave={this.handleMouseLeave} definition={this.state.definition} />
                 {/* Generate Printer Cards from printers.js */}
                 <div class="flex-cards">
                     {this.filterContent(printers)}
