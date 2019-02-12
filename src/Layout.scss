@@ -1,0 +1,144 @@
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 980px;
+}
+
+#layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#layout-main {
+  flex: auto;
+}
+
+#layout-footer {
+  flex-shrink: 0;
+}
+
+header {
+  background: darkcyan;
+
+  div > h1 {
+    color: white;
+    padding: 10px 0px;
+    margin: 0;
+    font-size: 1.4rem;
+  }
+}
+
+#hero {
+  background: #eee;
+  margin: 0;
+  padding: 40px 0 60px 0;
+
+  p {
+    font-weight: 100;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
+
+footer > h3 {
+  background: #eee;
+  margin: 0;
+  padding: 10px 0;
+}
+
+#nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #ddd;
+  box-sizing: border-box;
+
+  li {
+    display: inline-block;
+    padding: 14px 0;
+    margin: 0 0 0 -20px;
+  }
+
+  li > a {
+    margin: 0 20px;
+    padding: 0;
+    text-decoration: none;
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+  }
+
+  li > a:hover {
+    padding: 6px 0 8px 0;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    // border-bottom: 1px solid black;
+  }
+
+  hr {
+    margin: 0;
+    visibility: hidden;
+  }
+}
+
+// Printer
+
+.flex-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: -5px;
+}
+
+.printer {
+  box-sizing: border-box;
+  // border: 1px solid gray;
+  margin: 5px;
+  padding: 15px;
+  flex: 1;
+  min-width: 300px;
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
+  border: 1px solid darkcyan;
+  // color: white;
+  // box-shadow: 2px 2px 2px #666;
+
+  img {
+    // max-width: 300px;
+    max-width: 280px;
+    max-height: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.printer:hover {
+  // transform: translateY(-2px);
+  background: darkcyan;
+  color: white;
+}
+
+// Tag Cloud
+
+button {
+  border: none;
+  box-sizing: border-box;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 7px 20px 0;
+  padding: 7px 12px;
+  background: #444;
+  color: white;
+  cursor: pointer;
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
+}
+
+.tag:hover {
+  background: #777;
+}
