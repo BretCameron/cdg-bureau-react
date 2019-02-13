@@ -4,12 +4,15 @@ import TagCloud from '../components/TagCloud';
 import printers from '../data/printers';
 import techKey from '../data/tech-key';
 
+// To do: colour tags based on state, not click
+
 // Define technologies as an array
 const technologiesArray = [...new Set(Object.values(printers).map((el, index) => el.technology))];
 
-// Define initial state (every technology is 'off')
+// Define initial state 
 const initialState = { tech: {}, definition: "" };
 
+// Add technologies to initial state (starting as false)
 technologiesArray.forEach((el) => initialState.tech[el] = false);
 
 export default class OurTechnologies extends Component {

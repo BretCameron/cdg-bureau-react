@@ -56,16 +56,17 @@ footer > h3 {
   list-style: none;
   padding: 0;
   margin: 0;
-  background: #ddd;
+  background: #333;
   box-sizing: border-box;
 
   li {
     display: inline-block;
-    padding: 14px 0;
+    padding: 8px 0;
     margin: 0 0 0 -20px;
   }
 
   li > a {
+    color: white;
     margin: 0 20px;
     padding: 0;
     text-decoration: none;
@@ -198,4 +199,51 @@ button {
 #logo {
   max-width: 120px;
   padding: 14px 0;
+}
+
+// FAQ
+
+$border: 1px solid lightgray;
+
+.question-block {
+  border: $border;
+  border-bottom: none;
+  margin-bottom: 20px;
+  // box-shadow: 1px 1px 6px rgb(182, 182, 182);
+}
+
+.question {
+  border-bottom: $border;
+  background: #eee;
+  cursor: pointer;
+  z-index: 99;
+
+  h3 {
+    padding: 14px;
+    margin: 0;
+  }
+}
+
+.answer {
+  border-bottom: $border;
+  transition-duration: 300ms;
+  transition-delay: 0ms;
+  transition-property: display;
+  height: 3.5rem;
+  opacity: 1;
+  // border-top: none;
+
+  p {
+    padding: 17px;
+    margin: 0;
+  }
+}
+
+.closed {
+  height: 0;
+  display: none;
+
+  p {
+    // display: none;
+  }
 }
