@@ -6,8 +6,11 @@
 
 .placeholder {
   width: 100%;
-  background: #eee;
-  border: 1px solid gray;
+  background: rgb(248, 248, 248);
+  // border: 1px solid gray;
+  box-shadow: 1px 1px 6px rgb(182, 182, 182);
+  margin: 30px 0 10px 0;
+  // padding: 20px 0;
   height: 50vh;
   display: flex;
   justify-content: center;
@@ -19,6 +22,17 @@
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+li {
+  font-weight: 100;
+  font-size: 1.1rem;
+}
+
+p {
+  font-weight: 100;
+  font-size: 1.1rem;
 }
 
 #layout {
@@ -87,6 +101,8 @@ footer > h3 {
     display: inline-block;
     padding: 8px 0;
     margin: 0 0 0 -20px;
+    font-size: 1rem;
+    font-weight: 300;
   }
 
   li > a {
@@ -260,6 +276,8 @@ $border: 1px solid lightgray;
   p {
     padding: 17px;
     margin: 0;
+    font-weight: 100;
+    font-size: 1.1rem;
   }
 }
 
@@ -275,21 +293,23 @@ $border: 1px solid lightgray;
 // Footer
 footer {
   margin-top: 20px;
+  padding-bottom: 20px;
   box-shadow: -2px -2px 2px #00000050;
+  background: #222;
 }
 
 .flex-footer {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin: 0 -20px;
-  background: #222;
+  // flex-wrap: wrap;
+  // margin: 0 -20px;
   color: white;
 
   .column {
     // flex: 1;
     min-width: 180px;
-    margin: 20px 20px;
+    // margin: 10px 20px 0 20px;
 
     img {
       max-width: 120px;
@@ -314,5 +334,72 @@ footer {
 
   a:hover {
     text-decoration: underline;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .flex-footer {
+    display: block;
+    // max-width: 400px;
+    margin: 0;
+    padding: 10px 0px;
+    text-align: left;
+  }
+
+  .column {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Materials
+
+.material-card {
+  box-shadow: 1px 1px 6px rgb(182, 182, 182);
+  padding: 15px 10px;
+  margin-bottom: 20px;
+  display: flex;
+  // flex-wrap: wrap;
+
+  .material-image {
+    margin: 0;
+    // width: 200px;
+
+    img {
+      width: 200px;
+    }
+  }
+}
+
+.material-text {
+  hr {
+    margin: 0 0 15px 0;
+    opacity: 0.5;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  p {
+    font-weight: 100;
+    font-size: 1.1rem;
+  }
+}
+
+// Contact
+
+.flex-contact {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+
+  div {
+    padding: 10px;
+
+    ul {
+      margin-bottom: 20px;
+    }
   }
 }
