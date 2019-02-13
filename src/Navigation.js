@@ -22,21 +22,21 @@ export default class Navigation extends Component {
               <ul id="nav-list">
                 <div className="container">
                   <li>
-                    <Link to="/"><span role="img" aria-label="emoji">🏠</span> Get a Quote</Link>
+                    <Link to="/">Get a Quote</Link>
                   </li>
                   <li>
-                    <Link to="/technologies"><span role="img" aria-label="emoji">🤖</span>Technologies</Link>
+                    <Link to="/technologies">Technologies</Link>
                   </li>
-                  <li><Link to="/materials"><span role="img" aria-label="emoji">🏺</span>Materials</Link>
+                  <li><Link to="/materials">Materials</Link>
                   </li>
                   <li>
-                    <Link to="/faq"><span role="img" aria-label="emoji">❓</span> FAQ</Link>
+                    <Link to="/faq">FAQ</Link>
                   </li>
                   {/* <li>
                   <Link to="/example-parts"><span role="img" aria-label="emoji">🔩</span> Example Parts</Link>
                 </li> */}
                   <li>
-                    <Link to="/contact-us"><span role="img" aria-label="emoji">📝</span> Contact Us</Link>
+                    <Link to="/contact-us">Contact Us</Link>
                   </li>
                   <hr />
                 </div>
