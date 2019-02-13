@@ -198,8 +198,11 @@ footer > h3 {
 // Tag Cloud
 
 button {
+  font-weight: 100;
+  text-transform: uppercase;
   border: none;
   box-sizing: border-box;
+  padding: 15px;
 }
 
 .tag-cloud {
@@ -237,8 +240,21 @@ button {
 // Logo
 
 #logo {
-  max-width: 120px;
+  max-width: 160px;
   padding: 14px 0;
+}
+
+a {
+  text-decoration: none;
+
+  p {
+    margin: -14px 0 14px 0;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 }
 
 // FAQ

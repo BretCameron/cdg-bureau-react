@@ -21,15 +21,25 @@ export default class Navigation extends Component {
               <Header />
               <ul id="nav-list">
                 <div className="container">
-                  <li><Link to="/"><span role="img" aria-label="emoji">🏠</span> Get a Quote</Link></li>
-                  <li><Link to="/technologies"><span role="img" aria-label="emoji">🤖</span>Technologies</Link></li>
-                  <li><Link to="/materials"><span role="img" aria-label="emoji">🏺</span>Materials</Link></li>
-                  <li><Link to="/faq"><span role="img" aria-label="emoji">❓</span> FAQ</Link></li>
-                  {/* <li><Link to="/example-parts"><span role="img" aria-label="emoji">🔩</span> Example Parts</Link></li> */}
-                  <li><Link to="/contact-us"><span role="img" aria-label="emoji">📝</span> Contact Us</Link></li>
+                  <li>
+                    <Link to="/"><span role="img" aria-label="emoji">🏠</span> Get a Quote</Link>
+                  </li>
+                  <li>
+                    <Link to="/technologies"><span role="img" aria-label="emoji">🤖</span>Technologies</Link>
+                  </li>
+                  <li><Link to="/materials"><span role="img" aria-label="emoji">🏺</span>Materials</Link>
+                  </li>
+                  <li>
+                    <Link to="/faq"><span role="img" aria-label="emoji">❓</span> FAQ</Link>
+                  </li>
+                  {/* <li>
+                  <Link to="/example-parts"><span role="img" aria-label="emoji">🔩</span> Example Parts</Link>
+                </li> */}
+                  <li>
+                    <Link to="/contact-us"><span role="img" aria-label="emoji">📝</span> Contact Us</Link>
+                  </li>
                   <hr />
                 </div>
-
               </ul>
               <div className="container">
                 <Switch>
@@ -39,6 +49,7 @@ export default class Navigation extends Component {
                   <Route exact path="/faq" component={FAQ} />
                   <Route exact path="/example-parts" component={ExampleParts} />
                   <Route exact path="/contact-us" component={ContactUs} />
+                  <Route exact path="/404" component={NoMatch} />
                   <Route component={NoMatch} />
                 </Switch>
               </div>
@@ -51,4 +62,4 @@ export default class Navigation extends Component {
       </BrowserRouter>
     )
   }
-}
+};
