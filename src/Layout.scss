@@ -25,6 +25,12 @@ h2 {
 
 header {
   background: darkcyan;
+  // border-bottom: 5px solid darkcyan;
+  padding: 30px 0;
+
+  img {
+    width: 200px;
+  }
 
   div > h1 {
     color: white;
@@ -78,8 +84,8 @@ footer > h3 {
 
   li > a:hover {
     padding: 6px 0 8px 0;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
     // border-bottom: 1px solid black;
   }
 
