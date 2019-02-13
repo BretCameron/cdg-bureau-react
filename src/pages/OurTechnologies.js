@@ -27,19 +27,16 @@ export default class OurTechnologies extends Component {
     }
 
     handleClick(e) {
-        const key = e.target.id;
-
-        const newState = this.state;
-
+        const key = e.target.id, newState = this.state;
         newState.tech[key] = !this.state.tech[key];
 
         this.setState(newState);
 
-        if (!e.target.classList.contains('tag-select')) {
-            e.target.classList.add('tag-select');
-        } else {
-            e.target.classList.remove('tag-select');
-        }
+        // if (!e.target.classList.contains('tag-select')) {
+        //     e.target.classList.add('tag-select');
+        // } else {
+        //     e.target.classList.remove('tag-select');
+        // }
     }
 
     handleMouseEnter(e) {
@@ -76,7 +73,7 @@ export default class OurTechnologies extends Component {
             <div>
                 <h2>Our Technologies</h2>
                 <p>The 3D printing equipment we have available to us includes:</p>
-                <TagCloud array={technologiesArray} handleClick={this.handleClick} handleMouseEnter={this.handleMouseEnter} handleMouseLeave={this.handleMouseLeave} definition={this.state.definition} />
+                <TagCloud array={technologiesArray} handleClick={this.handleClick} handleMouseEnter={this.handleMouseEnter} handleMouseLeave={this.handleMouseLeave} definition={this.state.definition} selected={this.state.tech} />
                 {/* Generate Printer Cards from printers.js */}
                 <div class="flex-cards">
                     {this.filterContent(printers)}
