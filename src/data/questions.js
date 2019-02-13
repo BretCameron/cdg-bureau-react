@@ -1,20 +1,20 @@
 const questions = {
-    'What technologies do you have?': {
-        question: 'What technologies do you have?',
-        answer: 'Many'
+    'How soon can I expect to receive my part(s)?': {
+        question: 'How soon can I expect to receive my part(s)?',
+        answer: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede'
     },
-    'What materials do you have?': {
-        question: 'What materials do you have?',
-        answer: 'Even More!'
-    },
-    'How can I get in touch?': {
-        question: 'How can I get in touch?',
-        answer: 'Email us at info@cdg.uk.com'
-    },
-    'Why is this website so fast?': {
-        question: 'Why is this website so fast?',
-        answer: 'It\'s built using React, an extremely fast JavaScript library!'
-    },
+    'What happens if my part geometry needs to be changed before the print?': {
+        question: 'What happens if my part geometry needs to be changed before the print?',
+        answer: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede'
+        },
+    'How can I contact someone about my order?': {
+        question: 'How can I contact someone about my order?',
+        answer: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede'
+        },
+    'What is your returns policy?': {
+        question: 'What is your returns policy?',
+        answer: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede'
+        },
 };
 
 export default questions;

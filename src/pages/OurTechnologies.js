@@ -53,12 +53,9 @@ export default class OurTechnologies extends Component {
 
         const trueStates = Object.keys(this.state.tech).filter(el => this.state.tech[el]);
 
-        const filterExp = new RegExp(trueStates.join("|"));//new RegExp();
-
-        console.log(trueStates);
+        const filterExp = new RegExp(trueStates.join("|"));
 
         const filteredArray = Object.values(array).filter((el, i) => el["technology"].match(filterExp));
-        // console.log(filteredArray);
         return Object.values(filteredArray).map((printer, index) => this.populatePage(printer, index));
     }
 

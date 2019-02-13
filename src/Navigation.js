@@ -21,7 +21,7 @@ export default class Navigation extends Component {
                                 <li><Link to="/technologies"><span role="img" aria-label="emoji">🤖</span>Technologies</Link></li>
                                 <li><Link to="/materials"><span role="img" aria-label="emoji">🏺</span>Materials</Link></li>
                                 <li><Link to="/faq"><span role="img" aria-label="emoji">❓</span> FAQ</Link></li>
-                                <li><Link to="/example-parts"><span role="img" aria-label="emoji">🔩</span> Example Parts</Link></li>
+                                {/* <li><Link to="/example-parts"><span role="img" aria-label="emoji">🔩</span> Example Parts</Link></li> */}
                                 <li><Link to="/contact-us"><span role="img" aria-label="emoji">📝</span> Contact Us</Link></li>
                                 <hr />
                             </div>

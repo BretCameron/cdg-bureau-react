@@ -4,6 +4,23 @@
   max-width: 1040px;
 }
 
+.placeholder {
+  width: 100%;
+  background: #eee;
+  border: 1px solid gray;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 #layout {
   min-height: 100vh;
   display: flex;
@@ -24,13 +41,10 @@ h2 {
 }
 
 header {
-  background: darkcyan;
+  background: linear-gradient(to right, #008b8b, #006969);
   // border-bottom: 5px solid darkcyan;
-  padding: 30px 0;
-
-  img {
-    width: 200px;
-  }
+  padding: 20px 0;
+  text-align: center;
 
   div > h1 {
     color: white;
@@ -62,8 +76,12 @@ footer > h3 {
   list-style: none;
   padding: 0;
   margin: 0;
-  background: #333;
+  background: #222;
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 2px 2px 2px #00000050;
 
   li {
     display: inline-block;
@@ -215,12 +233,12 @@ $border: 1px solid lightgray;
   border: $border;
   border-bottom: none;
   margin-bottom: 20px;
-  // box-shadow: 1px 1px 6px rgb(182, 182, 182);
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
 }
 
 .question {
   border-bottom: $border;
-  background: #eee;
+  background: rgb(247, 247, 247);
   cursor: pointer;
   z-index: 99;
 
@@ -235,7 +253,7 @@ $border: 1px solid lightgray;
   transition-duration: 300ms;
   transition-delay: 0ms;
   transition-property: display;
-  height: 3.5rem;
+  // height: 3.5rem;
   opacity: 1;
   // border-top: none;
 
@@ -251,5 +269,50 @@ $border: 1px solid lightgray;
 
   p {
     display: none;
+  }
+}
+
+// Footer
+footer {
+  margin-top: 20px;
+  box-shadow: -2px -2px 2px #00000050;
+}
+
+.flex-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0 -20px;
+  background: #222;
+  color: white;
+
+  .column {
+    // flex: 1;
+    min-width: 180px;
+    margin: 20px 20px;
+
+    img {
+      max-width: 120px;
+      padding-top: 28px;
+      // margin-top: 20px;
+    }
+  }
+
+  h4 {
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 }

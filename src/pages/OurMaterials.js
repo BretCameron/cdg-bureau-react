@@ -5,6 +5,7 @@ export default class OurMaterials extends Component {
         return (
             <div>
                 <h2>Our Materials</h2>
+                <p>The materials we have available include:</p>
             </div>
         )
     }
