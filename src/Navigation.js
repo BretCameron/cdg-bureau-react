@@ -12,6 +12,18 @@ import ContactUs from './pages/ContactUs';
 import NoMatch from './pages/NoMatch';
 
 export default class Navigation extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { navbarOpen: false };
+    this.clickNavbar = this.clickNavbar.bind(this);
+  }
+
+  clickNavbar() {
+    const newState = this.state;
+    newState.navbarOpen = !this.state.navbarOpen;
+    this.setState(newState);
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -20,24 +32,16 @@ export default class Navigation extends Component {
             <div>
               <Header />
               <ul id="nav-list">
-                <div className="container">
-                  <li>
-                    <Link to="/">Get a Quote</Link>
+                <div className="nav-container">
+                  <li id="mobile-menu" onClick={this.clickNavbar}>≡
                   </li>
-                  <li>
-                    <Link to="/technologies">Technologies</Link>
-                  </li>
-                  <li><Link to="/materials">Materials</Link>
-                  </li>
-                  <li>
-                    <Link to="/faq">FAQ</Link>
-                  </li>
-                  {/* <li>
-                  <Link to="/example-parts"><span role="img" aria-label="emoji">🔩</span> Example Parts</Link>
-                </li> */}
-                  <li>
-                    <Link to="/contact-us">Contact Us</Link>
-                  </li>
+                  <div className={this.state.navbarOpen ? false : 'nav-closed'}>
+                    <Link to="/"><li>Get a Quote</li></Link>
+                    <Link to="/technologies"><li>Technologies</li></Link>
+                    <Link to="/materials"><li>Materials</li></Link>
+                    <Link to="/faq"><li>FAQ</li></Link>
+                    <Link to="/contact-us"><li>Contact Us</li></Link>
+                  </div>
                   <hr />
                 </div>
               </ul>
@@ -59,7 +63,7 @@ export default class Navigation extends Component {
             <Footer />
           </div>
         </div>
-      </BrowserRouter>
+      </BrowserRouter >
     )
   }
 };

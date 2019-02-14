@@ -10,7 +10,7 @@ export default class Header extends Component {
         <div className="container">
           <Link to="/">
             <img id="logo" src={Logo} alt="Logo" />
-            <p>3D Printing Bureau</p>
+            <p id="byline">3D Printing Bureau</p>
           </Link>
         </div>
       </header>
