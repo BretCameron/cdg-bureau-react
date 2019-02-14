@@ -42,12 +42,12 @@ export default class Navigation extends Component {
                 <div className="nav-container">
                   <li id="mobile-menu" onClick={this.clickNavbar}>≡
                   </li>
-                  <div className={this.state.navbarOpen ? false : 'nav-closed'}>
-                    <div onClick={this.closeNavbar}><Link to="/"><li>Get a Quote</li></Link></div>
-                    <div onClick={this.closeNavbar}><Link to="/technologies"><li>Technologies</li></Link></div>
-                    <div onClick={this.closeNavbar}><Link to="/materials"><li>Materials</li></Link></div>
-                    <div onClick={this.closeNavbar}><Link to="/faq"><li>FAQ</li></Link></div>
-                    <div onClick={this.closeNavbar}><Link to="/contact-us"><li>Contact Us</li></Link></div>
+                  <div className={this.state.navbarOpen ? 'nav-open' : 'nav-closed'}>
+                    <div className="inline-block" onClick={this.closeNavbar}><Link to="/"><li>Get a Quote</li></Link></div>
+                    <div className="inline-block" onClick={this.closeNavbar}><Link to="/technologies"><li>Technologies</li></Link></div>
+                    <div className="inline-block" onClick={this.closeNavbar}><Link to="/materials"><li>Materials</li></Link></div>
+                    <div className="inline-block" onClick={this.closeNavbar}><Link to="/faq"><li>FAQ</li></Link></div>
+                    <div className="inline-block" onClick={this.closeNavbar}><Link to="/contact-us"><li>Contact Us</li></Link></div>
                   </div>
                   <hr />
                 </div>
