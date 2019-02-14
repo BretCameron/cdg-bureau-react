@@ -16,11 +16,18 @@ export default class Navigation extends Component {
     super(props);
     this.state = { navbarOpen: false };
     this.clickNavbar = this.clickNavbar.bind(this);
+    this.closeNavbar = this.closeNavbar.bind(this);
   }
 
   clickNavbar() {
     const newState = this.state;
     newState.navbarOpen = !this.state.navbarOpen;
+    this.setState(newState);
+  }
+
+  closeNavbar() {
+    const newState = this.state;
+    newState.navbarOpen = false;
     this.setState(newState);
   }
 
@@ -36,11 +43,11 @@ export default class Navigation extends Component {
                   <li id="mobile-menu" onClick={this.clickNavbar}>≡
                   </li>
                   <div className={this.state.navbarOpen ? false : 'nav-closed'}>
-                    <Link to="/"><li>Get a Quote</li></Link>
-                    <Link to="/technologies"><li>Technologies</li></Link>
-                    <Link to="/materials"><li>Materials</li></Link>
-                    <Link to="/faq"><li>FAQ</li></Link>
-                    <Link to="/contact-us"><li>Contact Us</li></Link>
+                    <div onClick={this.closeNavbar}><Link to="/"><li>Get a Quote</li></Link></div>
+                    <div onClick={this.closeNavbar}><Link to="/technologies"><li>Technologies</li></Link></div>
+                    <div onClick={this.closeNavbar}><Link to="/materials"><li>Materials</li></Link></div>
+                    <div onClick={this.closeNavbar}><Link to="/faq"><li>FAQ</li></Link></div>
+                    <div onClick={this.closeNavbar}><Link to="/contact-us"><li>Contact Us</li></Link></div>
                   </div>
                   <hr />
                 </div>
