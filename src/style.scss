@@ -175,6 +175,10 @@ li#mobile-menu {
     cursor: pointer;
   }
 
+  .inline-block {
+    display: block;
+  }
+
   li#mobile-menu:hover {
     padding: 6px 0 8px 0;
     margin: -6px 20px -8px 20px;
