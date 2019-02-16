@@ -61,7 +61,7 @@ export default class OurTechnologies extends Component {
 
     populatePage(printer, index) {
         return (
-            <Printer key={index} printer={printer.name} image={printer.image} technology={printer.technology} description={printer.description} />
+            <Printer key={index} printer={printer.name} image={printer.image} placeholder={printer.placeholder} technology={printer.technology} description={printer.description} />
         )
     }
 
