@@ -24,7 +24,6 @@ export default class Printer extends Component {
           <div className="printer-image">
             <LazyLoad offset="200" width="100%" >
               <ImageLoader src={this.props.image} alt={this.props.printer} />
-              {/* <img className="lazy-load" src={this.props.image} alt={this.props.printer} /> */}
             </LazyLoad>
           </div>
         </div>
