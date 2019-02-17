@@ -6,13 +6,9 @@ export default class Printer extends Component {
 
   render() {
 
-    const backgroundImage = {
-      background: 'blue',
-    }
-
     return (
       <Fragment>
-        <div technology={this.props.technology} className="printer">
+        <div onClick={this.props.handlePrinterClick} index={this.props.index} technology={this.props.technology} className="printer">
           <div className="printer-text">
             <div className="printer-headline">
               <h3>{this.props.printer}</h3>
@@ -22,7 +18,7 @@ export default class Printer extends Component {
             <p>{this.props.description}</p>
           </div>
           <div className="printer-image">
-            <LazyLoad offset="200" width="100%" >
+            <LazyLoad width="100%" >
               <ImageLoader src={this.props.image} alt={this.props.printer} />
             </LazyLoad>
           </div>
