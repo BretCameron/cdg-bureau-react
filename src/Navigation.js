@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
 import './style.scss';
+
 import Header from './Header';
 import Footer from './Footer';
 import Logo from './Replik8.svg';
@@ -12,14 +14,20 @@ import ExampleParts from './pages/ExampleParts';
 import ContactUs from './pages/ContactUs';
 import NoMatch from './pages/NoMatch';
 
+// import { matchPath } from 'react-router'
+// import { withRouter } from 'react-router-dom';
 
-export default class Navigation extends Component {
+// window.onhashchange = Function.call(Component.Navigation.closeNavbar);
+
+class Navigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
       navbarOpen: false,
+      pathname: window.location.pathname,
       scrollY: 0,
     };
+    // this.updateCurrentNav = this.updateCurrentNav.bind(this);
     this.clickNavbar = this.clickNavbar.bind(this);
     this.closeNavbar = this.closeNavbar.bind(this);
     this.listenToScroll = this.listenToScroll.bind(this);
@@ -34,8 +42,10 @@ export default class Navigation extends Component {
   closeNavbar() {
     const newState = this.state;
     newState.navbarOpen = false;
+    newState.pathname = window.location.pathname;
     this.setState(newState);
   }
+
 
   componentDidMount() {
     window.addEventListener('scroll', this.listenToScroll)
@@ -72,27 +82,27 @@ export default class Navigation extends Component {
                         </Link>
                       </div>
                       <div className="nav-flex-right">
-                        <div className="inline-block" onClick={this.closeNavbar}>
+                        <div navid="get-quote" className={this.state.pathname === `/` ? `inline-block current-page` : `inline-block`} onClick={this.closeNavbar}>
                           <Link to="/">
                             <li>Get a Quote</li>
                           </Link>
                         </div>
-                        <div className="inline-block" onClick={this.closeNavbar}>
+                        <div navid="technologies" className={this.state.pathname === `/technologies` ? `inline-block current-page` : `inline-block`} onClick={this.closeNavbar}>
                           <Link to="/technologies">
                             <li>Technologies</li>
                           </Link>
                         </div>
-                        <div className="inline-block" onClick={this.closeNavbar}>
+                        <div navid="materials" className={this.state.pathname === `/materials` ? `inline-block current-page` : `inline-block`} onClick={this.closeNavbar}>
                           <Link to="/materials">
                             <li>Materials</li>
                           </Link>
                         </div>
-                        <div className="inline-block" onClick={this.closeNavbar}>
+                        <div navid="faq" className={this.state.pathname === `/faq` ? `inline-block current-page` : `inline-block`} onClick={this.closeNavbar}>
                           <Link to="/faq">
                             <li>FAQ</li>
                           </Link>
                         </div>
-                        <div className="inline-block" onClick={this.closeNavbar}>
+                        <div navid="contact-us" className={this.state.pathname === `/contact-us` ? `inline-block current-page` : `inline-block`} onClick={this.closeNavbar}>
                           <Link to="/contact-us">
                             <li>Contact Us</li>
                           </Link>
@@ -125,3 +135,5 @@ export default class Navigation extends Component {
     )
   }
 };
+
+export default Navigation;

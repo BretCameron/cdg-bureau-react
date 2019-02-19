@@ -7,7 +7,7 @@ export default class Material extends Component {
     return (
       <div className="material-card">
         <div className="material-image">
-          <LazyLoad offset="200" width="100%" >
+          <LazyLoad width="100%" >
             <ImageLoader src={this.props.image} alt={this.props.material} />
           </LazyLoad>
         </div>

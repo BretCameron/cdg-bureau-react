@@ -33,6 +33,11 @@ export default class OurTechnologies extends Component {
     this.filterContent = this.filterContent.bind(this);
   }
 
+  componentDidMount() {
+    // console.log(this.props);
+    // console.log(this.props.route);
+  }
+
   handlePrinterClick(e) {
     const index = e.currentTarget.getAttribute('index');
     const newState = this.state;
@@ -90,7 +95,7 @@ export default class OurTechnologies extends Component {
     return (
       <div>
         <div className={this.state.isModalOpen ? 'modal-open' : 'modal-closed'} index={modalNum} onClick={this.handlePrinterClick}>
-        <PrinterModal printer={printer.name} image={printer.image} placeholder={printer.placeholder} technology={printer.technology} description={printer.description} />
+          <PrinterModal printer={printer.name} image={printer.image} placeholder={printer.placeholder} technology={printer.technology} description={printer.description} />
         </div>
         <h2>Our Technologies</h2>
         <p>The 3D printing equipment we have available to us includes:</p>
