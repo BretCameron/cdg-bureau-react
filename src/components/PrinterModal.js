@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
-import LazyLoad from 'react-lazyload'
+// import LazyLoad from 'react-lazyload'
 import ImageLoader from '../components/ImageLoader'
 
 export default class PrinterModal extends Component {
   render() {
     return (
       <div className="modal">
-      <div className="modal-image">
-    <LazyLoad width="100%" >
-              <ImageLoader src={this.props.image} alt={this.props.printer} />
-            </LazyLoad>
-            </div>
+        <div className="modal-image">
+          <ImageLoader src={this.props.image} alt={this.props.printer} />
+        </div>
         <h1>{this.props.printer}</h1>
         {/* <h4>{this.props.technology}</h4> */}
         <p>{this.props.description}</p>
