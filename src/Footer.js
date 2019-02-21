@@ -11,7 +11,7 @@ export default class Footer extends Component {
         {/* <p>Replik8 is a trading name of Concurrent Design Group</p> */}
         <div className="container">
           <div className="flex-footer">
-            <div className="column">
+            <div className="column" onClick={this.props.closeNavbar}>
               <Link to="/">
                 <img src={Logo} alt="Logo" />
               </Link>

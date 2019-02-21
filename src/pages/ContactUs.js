@@ -1,12 +1,16 @@
 import React, { Component, Fragment } from 'react';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
+import MapContainer from '../components/MapContainer';
 
 export default class ContactUs extends Component {
   render() {
     return (
       <Fragment>
         <h2>Contact Us</h2>
+
         <div className="flex-contact">
           <div id="GoogleMap">
+      {/* <MapContainer /> */}
             <iframe title="GoogleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2502.746461415689!2d-0.9659520842431356!3d51.150026379578016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48743aeb85eb5323%3A0x1c7bbab88d8bd956!2sConcurrent+Design+Group!5e0!3m2!1sen!2suk!4v1550080450253" width="100%" height="450" frameborder="0"></iframe>
           </div>
           <div>

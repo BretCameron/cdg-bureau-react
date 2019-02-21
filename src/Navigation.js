@@ -73,14 +73,14 @@ class Navigation extends Component {
         <div id="layout">
           <div id="layout-main">
             <div>
-              <Header />
+              <Header closeNavbar={this.closeNavbar} />
               <ul id="nav-list">
                 <div className="nav-container">
                   <li id="mobile-menu" onClick={this.clickNavbar}>≡
                   </li>
                   <div className={this.state.navbarOpen ? 'nav-open' : 'nav-closed'}>
                     <div className="nav-flex">
-                      <div className="nav-flex-left">
+                      <div className="nav-flex-left" onClick={this.closeNavbar}>
                         <Link to="/">
                           <img id="nav-logo" src={Logo} alt="Logo" />
                         </Link>
@@ -132,7 +132,7 @@ class Navigation extends Component {
             </div>
           </div>
           <div id="layout-footer">
-            <Footer />
+            <Footer closeNavbar={this.closeNavbar} />
           </div>
         </div>
       </BrowserRouter >

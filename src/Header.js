@@ -6,7 +6,7 @@ export default class Header extends Component {
   render() {
     return (
       <header>
-        <div className="container">
+        <div className="container" onClick={this.props.closeNavbar}>
           <Link to="/">
             <img id="logo" src={require('./images/replik8.png')} alt="Logo" />
             {/* <p id="byline">3D Printing Bureau</p> */}
