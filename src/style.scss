@@ -58,8 +58,8 @@ p {
 * COLORS
 \*------------------------------------*/
 
-$green: rgb(27, 110, 75);
-$faded-green: rgb(29, 122, 85);
+$green: rgb(18, 77, 52);
+$faded-green: rgb(24, 100, 70);
 $grey: rgb(153, 153, 153);
 $off-white: rgb(238, 238, 238);
 $off-black: rgb(51, 51, 51);
@@ -226,26 +226,26 @@ footer > h3 {
   list-style: none;
   padding: 0;
   margin: 0;
-  background: rgb(27, 110, 75);
-  // position: sticky;
-  // top: 0;
+  background: $green;
+  position: sticky;
+  top: 0;
   z-index: 999;
   box-shadow: 2px 2px 2px #00000050;
 
   #mobile-menu {
-    font-weight: 300;
+    font-weight: 500;
     margin: 0;
     padding: 15px 0;
     cursor: pointer;
   }
 
   li {
-    font-weight: 300;
+    font-weight: 500;
     display: inline-block;
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: white;
     margin: 0 0px;
-    padding: 15px 20px;
+    padding: 15px 15px;
     text-decoration: none;
     border-top: 1px solid rgba(0, 0, 0, 0);
     border-bottom: 1px solid rgba(0, 0, 0, 0);
@@ -394,7 +394,7 @@ li#mobile-menu {
 
 button {
   font-weight: 100;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   border: none;
   box-sizing: border-box;
   padding: 15px;
@@ -424,6 +424,18 @@ button {
 .tag:hover {
   background: $off-black;
 }
+
+#reset {
+  border-radius: 0;
+  font-style: italic;
+  color: $off-white;
+  background: $grey;
+  // color: $off-black;
+}
+
+#reset:hover {
+  background: $off-black;
+} 
 
 // Definition
 
@@ -538,6 +550,7 @@ footer {
   .column {
     // flex: 1;
     min-width: 180px;
+    padding: 0 5px;
     // margin: 10px 20px 0 20px;
 
     img {
@@ -566,10 +579,9 @@ footer {
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 780px) {
   .flex-footer {
     display: block;
-    // max-width: 400px;
     margin: 0;
     padding: 10px 0px;
     text-align: left;

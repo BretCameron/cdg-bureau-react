@@ -1,3 +1,7 @@
+//Add LazyLoad & animation to Header Image
+//There are several links to the homepage - make sure they reset "Get a quote" to the clicked style
+// Or find a way of pulling in data onhashchange
+
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 

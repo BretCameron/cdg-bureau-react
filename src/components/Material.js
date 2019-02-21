@@ -3,6 +3,7 @@ import LazyLoad from 'react-lazyload'
 import ImageLoader from '../components/ImageLoader'
 
 export default class Material extends Component {
+
   render() {
     return (
       <div className="material-card">
@@ -13,7 +14,7 @@ export default class Material extends Component {
         </div>
         <div className="material-text">
           <h3>{this.props.material}</h3>
-          <hr />{this.props.variants.map((el, index) => <p key={index} className="tag">{el}</p>)}
+          <hr />{this.props.variants.map((el, index) => <p key={index} category={this.props.material} id={el} className={this.props.state === el ? 'tag tag-select' : 'tag'} onClick={this.props.handleClick}>{el}</p>)}
           <p>{this.props.description}</p>
         </div>
       </div>

@@ -19,7 +19,9 @@ const initialState = {
 };
 
 // Add technologies to initial state (starting as false)
-technologiesArray.forEach((el) => initialState.tech[el] = false);
+technologiesArray.forEach((el) => {
+  initialState.tech[el] = false;
+});
 
 export default class OurTechnologies extends Component {
   constructor(props) {
@@ -31,11 +33,7 @@ export default class OurTechnologies extends Component {
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.populatePage = this.populatePage.bind(this);
     this.filterContent = this.filterContent.bind(this);
-  }
-
-  componentDidMount() {
-    // console.log(this.props);
-    // console.log(this.props.route);
+    this.resetFilter = this.resetFilter.bind(this);
   }
 
   handlePrinterClick(e) {
@@ -58,6 +56,14 @@ export default class OurTechnologies extends Component {
     //     e.target.classList.remove('tag-select');
     // }
   }
+
+  resetFilter() {
+    // alert('hi');
+    const state = this.state;
+    Object.keys(state.tech).map((el) => state.tech[el] = false);
+    this.setState(state);
+    // console.log(state.tech);
+    }
 
   handleMouseEnter(e) {
     this.setState({ definition: techKey[e.target.id] })
@@ -99,7 +105,7 @@ export default class OurTechnologies extends Component {
         </div>
         <h2>Our Technologies</h2>
         <p>The 3D printing equipment we have available to us includes:</p>
-        <TagCloud array={technologiesArray} handleClick={this.handleClick} handleMouseEnter={this.handleMouseEnter} handleMouseLeave={this.handleMouseLeave} definition={this.state.definition} selected={this.state.tech} />
+        <TagCloud array={technologiesArray} handleClick={this.handleClick} handleMouseEnter={this.handleMouseEnter} handleMouseLeave={this.handleMouseLeave} definition={this.state.definition} selected={this.state.tech} resetFilter={this.resetFilter} />
         {/* Generate Printer Cards from printers.js */}
         <div className="flex-cards">
           {this.filterContent(printers)}

@@ -1,28 +1,28 @@
 const materials = {
-    'Plastic Filament': {
-        category: 'Plastic Filament',
+    'Filament': {
+        category: 'Filament',
         image: require('../images/materials/filament.png'),
         variants: ['ABS', 'ASA', 'PC-ABS', 'PETG', 'Nylon', 'Carbon-fibre', 'PLA', 'HIPS', 'PVA', 'PEEK', 'PEI'],
         description: 'The most common type of 3D printing material...',
     },
-    'Plastic Powder': {
-        category: 'Plastic Powder',
+    'Powder': {
+        category: 'Powder',
         image: require('../images/materials/powder.png'),
         variants: ['Nylon', 'TPU'],
         description: 'Plastic powders can produce some of the highest-quality, strongest, and...',
     },
-    'Plastic Resin': {
-        category: 'Plastic Resin',
+    'Resin': {
+        category: 'Resin',
         image: require('../images/materials/resin.png'),
         variants: ['Rigid', 'Opaque', 'Clear', 'ABS', 'PP'],
         description: 'Similar to plastic powders, plastic resins...',
     },
-    'Ceramic': {
-        category: 'Ceramic',
-        image: require('../images/materials/ceramic.png'),
-        variants: ['Plaster'],
-        description: 'Ceramic materials are useful for...',
-    },
+    // 'Ceramic': {
+    //     category: 'Ceramic',
+    //     image: require('../images/materials/ceramic.png'),
+    //     variants: ['Plaster'],
+    //     description: 'Ceramic materials are useful for...',
+    // },
     'Flex': {
         category: 'Flex',
         image: require('../images/materials/flex.png'),

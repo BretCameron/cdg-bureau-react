@@ -25,8 +25,8 @@ const printers = {
   //     technology: "FFF",
   //     description: "For plastic part models in TPU or laser cut/engraved."
   // },
-  "ProJet 3X00 Max": {
-    name: "ProJet 3X00 Max",
+  "ProJet 3500 HDMax": {
+    name: "ProJet 3500 HDMax",
     image: require("../images/projet-3600.png"),
     placeholder: require("../images/placeholders/projet-3600_1.svg"),
     technology: "MJP",
@@ -60,29 +60,29 @@ const printers = {
     technology: "DLP",
     description: "For high resolution small parts."
   },
-  "ProJet X60 / Z650 / Z450": {
-    name: "ProJet X60 / Z650 / Z450",
+  "ProJet 660 / Z650": {
+    name: "ProJet 660 / Z650",
     image: require("../images/projet-660-pro.png"),
     placeholder: require("../images/placeholders/projet-660-pro_1.svg"),
     technology: "CJP",
     description: "For full colour plaster prints."
   },
-  "ProJet 7000, ProX 800": {
-    name: "ProJet 7000, ProX 800",
+  "iPro 8000": {
+    name: "iPro 8000",
     image: require("../images/projet-7000.png"),
     placeholder: require("../images/placeholders/projet-7000_1.svg"),
     technology: "SLA",
     description: "For parts in a choice of white or clear plastic."
   },
-  "Sinterit LISA, ProX 6100": {
-    name: "Sinterit LISA, ProX 6100",
+  "Sinterit LISA Pro": {
+    name: "Sinterit LISA Pro",
     image: require("../images/sinterit-lisa.png"),
     placeholder: require("../images/placeholders/sinterit-lisa_1.svg"),
     technology: "SLS",
     description: "For parts in super-strong nylon materials."
   },
-  "DMP 350": {
-    name: "DMP 350",
+  "ProX 300": {
+    name: "ProX 300",
     image: require("../images/dmp-350.png"),
     placeholder: require("../images/placeholders/dmp-350_1.svg"),
     technology: "DMP",
