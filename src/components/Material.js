@@ -11,9 +11,9 @@ export default class Material extends Component {
       <div className="material-card">
         <div className="material-image">
           <LazyLoad width="100%" >
-          
-          <ImageLoader src={imageDefault ? this.props.image[this.props.state] : this.props.defaultImage} alt={this.props.material} />
-          
+
+            <ImageLoader src={imageDefault ? this.props.image[this.props.state] : this.props.defaultImage} alt={this.props.material} />
+
           </LazyLoad>
         </div>
         <div className="material-text">
