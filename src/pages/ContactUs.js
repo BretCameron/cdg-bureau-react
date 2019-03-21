@@ -47,7 +47,7 @@ export default class ContactUs extends Component {
             <ul>
               <li><b>Tel:</b> 44 (0)1420 88645</li>
               <li><b>Fax:</b> 44 (0)1420 88629</li>
-              <li><b>Email:</b> info@replik8.co.uk</li>
+              <li><b>Email:</b> info@replik8.com</li>
             </ul>
           </div>
         </div>
