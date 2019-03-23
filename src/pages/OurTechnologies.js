@@ -16,6 +16,7 @@ const initialState = {
   definition: "",
   isModalOpen: false,
   modalNum: 0,
+  data: {},
 };
 
 // Add technologies to initial state (starting as false)
@@ -34,6 +35,41 @@ export default class OurTechnologies extends Component {
     this.populatePage = this.populatePage.bind(this);
     this.filterContent = this.filterContent.bind(this);
     this.resetFilter = this.resetFilter.bind(this);
+    this.fetchPostData = this.fetchPostData.bind(this);
+  }
+
+  componentDidMount() {
+    this.fetchPostData();
+  }
+
+  fetchPostData() {
+
+    let dataSet = {};
+
+    fetch(`http://localhost/headless-cms/wp-json/wp/v2/printers?per_page=100`)
+      .then(response => response.json())
+      .then(myJSON => {
+        console.log(myJSON);
+        let objLength = Object.keys(myJSON).length;
+        for (let i = 0; i < objLength; i++) {
+
+          // console.log(Object.values(myJSON)[i]);
+
+          let objKey = Object.values(myJSON)[i].title.rendered;
+
+          let newState = this.state;
+          newState.data[objKey] = {};
+          newState.data[objKey].name = Object.values(myJSON)[i].title.rendered;
+          newState.data[objKey].description = Object.values(myJSON)[i].content.rendered;
+          newState.data[objKey].image = Object.values(myJSON)[i]['featured_image_url'];
+          newState.data[objKey].technology = Object.values(myJSON)[i]['printer_category'];
+          this.setState(newState);
+        }
+        console.log(this.state.data);
+
+        //console.log(this.state.data);
+      })
+      ;
   }
 
   handlePrinterClick(e) {
@@ -63,7 +99,7 @@ export default class OurTechnologies extends Component {
     Object.keys(state.tech).map((el) => state.tech[el] = false);
     this.setState(state);
     // console.log(state.tech);
-    }
+  }
 
   handleMouseEnter(e) {
     this.setState({ definition: techKey[e.target.id] })
@@ -76,13 +112,26 @@ export default class OurTechnologies extends Component {
   filterContent(array) {
     //Work out what technologies are "true"
     //Create RegExp based on the true ones
-
     const trueStates = Object.keys(this.state.tech).filter(el => this.state.tech[el]);
 
     const filterExp = new RegExp(trueStates.join("|"));
 
     const filteredArray = Object.values(array).filter((el, i) => el["technology"].match(filterExp));
-    return Object.values(filteredArray).map((printer, index) => this.populatePage(printer, index));
+
+    if (!this.state.data) {
+
+      //return Object.values(filteredArray).map((printer, index) => this.populatePage(printer, index));
+      return false;
+
+    } else {
+
+      //return Object.values(filteredArray).map((printer, index) => this.populatePageAfterFetch(printer, index));
+
+      // console.log(Object.values(this.state.data));
+
+      return Object.values(this.state.data).map((printer, index) => this.populatePageAfterFetch(printer, index));
+
+    }
   }
 
   populatePage(printer, index) {
@@ -91,7 +140,27 @@ export default class OurTechnologies extends Component {
     )
   }
 
+  populatePageAfterFetch(printer, index) {
+    if (this.state.data) {
+
+      return (
+        <Printer 
+        key={index} 
+        index={index} 
+        printer={((Object.values(this.state.data)[index]) || []).name} 
+        image={((Object.values(this.state.data)[index]) || []).image} 
+        placeholder={printer.placeholder} 
+        technology={((Object.values(this.state.data)[index]) || []).technology} 
+        description={((Object.values(this.state.data)[index]) || []).description} />
+        )
+      }
+    }
+
   render() {
+
+    if (!this.state.data) {
+      return <div />
+    }
 
     let modalNum = this.state.modalNum;
     let printerArray = Object.values(printers);
@@ -100,6 +169,7 @@ export default class OurTechnologies extends Component {
 
     return (
       <div>
+
         <div className={this.state.isModalOpen ? 'modal-open' : 'modal-closed'} index={modalNum} onClick={this.handlePrinterClick}>
           <PrinterModal printer={printer.name} image={printer.image} placeholder={printer.placeholder} technology={printer.technology} description={printer.description} />
         </div>

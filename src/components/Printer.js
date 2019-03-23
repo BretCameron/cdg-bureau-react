@@ -15,9 +15,10 @@ export default class Printer extends Component {
               <h4>{this.props.technology}</h4>
             </div>
             <hr className="printer-hr" />
-            <p>{this.props.description}</p>
+            <div dangerouslySetInnerHTML={{__html: this.props.description}} />
           </div>
           <div className="printer-image">
+          {/* {console.log(this.props.image)} */}
             <LazyLoad width="100%" >
               <ImageLoader src={this.props.image} alt={this.props.printer} />
             </LazyLoad>

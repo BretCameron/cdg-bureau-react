@@ -17,6 +17,7 @@ import FAQ from './pages/FAQ';
 import ExampleParts from './pages/ExampleParts';
 import ContactUs from './pages/ContactUs';
 import NoMatch from './pages/NoMatch';
+import test from './pages/test';
 
 // import { matchPath } from 'react-router'
 // import { withRouter } from 'react-router-dom';
@@ -125,6 +126,7 @@ class Navigation extends Component {
                   <Route exact path="/faq" component={FAQ} />
                   <Route exact path="/example-parts" component={ExampleParts} />
                   <Route exact path="/contact-us" component={ContactUs} />
+                  <Route exact path="/test" component={test} />
                   <Route exact path="/404" component={NoMatch} />
                   <Route component={NoMatch} />
                 </Switch>
