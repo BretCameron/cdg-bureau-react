@@ -510,13 +510,17 @@ $border: 1px solid lightgray;
   transition-duration: 300ms;
   transition-delay: 0ms;
   transition-property: display;
-  // height: 3.5rem;
   opacity: 1;
-  // border-top: none;
 
   p {
     padding: 17px;
     margin: 0;
+    font-weight: 100;
+    font-size: 1.1rem;
+  }
+
+  ol {
+
     font-weight: 100;
     font-size: 1.1rem;
   }

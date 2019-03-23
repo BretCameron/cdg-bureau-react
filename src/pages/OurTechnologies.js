@@ -123,9 +123,6 @@ export default class OurTechnologies extends Component {
     }
 
   render() {
-    if (!this.state.data) {
-      return <div>Fetching data...</div>
-    } else {
       return (
       <>
         <h2>Our Technologies</h2>
@@ -134,6 +131,5 @@ export default class OurTechnologies extends Component {
         <div className="flex-cards">{this.filterContent()}</div>
       </>
       )
-    }
   }
 }

@@ -8,7 +8,7 @@ export default class QuestionBlock extends Component {
           <h3 id={`question${this.props.id}`}>{this.props.question}</h3>
         </div>
         <div className={this.props.open ? 'answer' : 'answer closed'}>
-          <p id={`answer${this.props.id}`} dangerouslySetInnerHTML={{ __html: this.props.answer }} />
+          <div id={`answer${this.props.id}`} dangerouslySetInnerHTML={{ __html: this.props.answer }} />
         </div>
       </Fragment >
     )
