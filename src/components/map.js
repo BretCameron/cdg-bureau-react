@@ -18,7 +18,7 @@ export class Map extends Component {
     if (!window.google) {
       var s = document.createElement('script');
       s.type = 'text/javascript';
-      s.src = `https://maps.google.com/maps/api/js?key=AIzaSyB1q1dQ-aAwCfbUjNqwAc3mu2EnAxF8G5Q`;
+      s.src = ``;
       var x = document.getElementsByTagName('script')[0];
       x.parentNode.insertBefore(s, x);
       // Below is important. 
